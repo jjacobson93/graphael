@@ -1,0 +1,8 @@
+[package]
+
+name = "graphael"
+version = "0.1.0"
+authors = [ "Jeremy Jacobson", "Daniel Yule <yule@cs.dal.ca>" ]
+
+[dependencies]
+rustc-serialize = "0.3"
