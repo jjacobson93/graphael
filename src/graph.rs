@@ -41,9 +41,9 @@ pub type NodeIndex = usize;
 /// Used to give a string representation for Node
 impl fmt::Display for Node {
 	fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-		write!(f, "Node<id={}, props=", self.id);
+		try!(write!(f, "Node<id={}, props=", self.id));
 		for (k, v) in self.props.iter() {
-			write!(f, "{}, {}", k, v);
+			try!(write!(f, "{}, {}", k, v));
 		}
 		write!(f, ">")
 	}
