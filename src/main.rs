@@ -1,11 +1,9 @@
-#![feature(convert)]
 extern crate rustc_serialize;
-// use std::io::net::tcp::TcpStream;
-// use std::io::net::ip::{Ipv4Addr, SocketAddr};
-use graph::Graph;
+extern crate graphael;
 use std::io;
 use std::io::BufRead;
-mod graph;
+use graphael::Graph;
+
 
 
 // Shorthand HashMap
@@ -76,13 +74,13 @@ fn main() {
 						current_state = 0
 					},
 					4 => { // Edges from node (NodeIndex) with label
-						let node_label : Vec<String> = s.trim().split("HAS").map(|x| x.trim().to_string()).collect();
-						println!("{:?}", graph.edges_with_label_from((node_label[0].to_owned().parse::<usize>()).unwrap(), node_label[1].to_owned()));
+						let node_label : Vec<&str> = s.trim().split("HAS").map(|x| x.trim()).collect();
+						println!("{:?}", graph.edges_with_label_from((node_label[0].to_owned().parse::<usize>()).unwrap(), node_label[1]));
 						current_state = 0
 					},
 					5 => { // Look up node by id (NodeIndex)
 						let nodeid = (s.trim().parse::<usize>()).unwrap();
-						println!("{}", graph.nodes.get(&nodeid).unwrap());
+						println!("{:?}", graph.get_node(nodeid));
 						current_state = 0
 					},
 					_ => { print!(">>> ") }
