@@ -1,7 +1,6 @@
 extern crate rustc_serialize;
 extern crate graphael;
-use std::io;
-use std::io::BufRead;
+use std::io::{self, BufRead, Write};
 use graphael::Graph;
 
 
@@ -16,6 +15,7 @@ fn main() {
 	println!("Graphael 0.1");
 
 	print!("Enter a graph name> ");
+	io::stdout().flush().unwrap();
 
 	// Get the graph file name from stdin or use 'langs'
 	let mut input = String::new();
@@ -44,6 +44,7 @@ fn main() {
 	println!("5. Look up node.");
 	println!("");
 	print!(">>> ");
+	io::stdout().flush().unwrap();
 
 	// Read from stdin
 	let locked_in = io::stdin();
@@ -107,6 +108,7 @@ fn main() {
 				print!(">>> ")
 			}
 		};
+		io::stdout().flush().unwrap();
 	}
 
 }
