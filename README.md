@@ -5,15 +5,16 @@ Graphael is a [graph database](http://en.wikipedia.org/wiki/Graph_database) writ
 
 ## Dependencies
 
-Graphael is built on Rust 0.10
+Graphael is built on Rust 1.5.0
 
 The easiest way to install Rust is through the installers provided on [the Rust install page](http://www.rust-lang.org/install.html).
 
+*Please Note* This version of Graphael requires the nightly version of Rust.
+
 ## Getting Started
-1. Run `make` in the root directory
 
-2. That's it! Just run `./graphael`
-
+1. Run `cargo build` in the root directory
+2. Run `cargo run` to run the program
 ## Examples
 ```
 Enter a graph name> langs

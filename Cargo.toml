@@ -1,0 +1,16 @@
+[package]
+
+name = "graphael"
+version = "0.1.1"
+authors = [ "Jeremy Jacobson", "Daniel Yule <yule@cs.dal.ca>" ]
+
+[dependencies]
+rustc-serialize = "0.3"
+
+[lib]
+name = "graphael"
+path = "src/graph.rs"
+
+[[bin]]
+name = "graphael_shell"
+path = "src/main.rs"
