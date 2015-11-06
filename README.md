@@ -15,6 +15,7 @@ The easiest way to install Rust is through the installers provided on [the Rust 
 
 1. Run `cargo build` in the root directory
 2. Run `cargo run` to run the program
+
 ## Examples
 ```
 Enter a graph name> langs
@@ -45,3 +46,6 @@ Enter node and label> 100 HAS influenced
 Enter node id> 100
 Some(Node<id=100, props={name: C}>)
 ```
+
+## License
+MIT
